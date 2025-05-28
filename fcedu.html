@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Feliz Cumpleaños!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #57e3e8;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      color: #a6ea66;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #e993e9;
+      z-index: 1;
+      max-width: 80%;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.9;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>¡MUY FELIZ CUMPLE EDU!</h1>
+  <h2>Es el regalo de una programadora para un programador</h2>
+    
+   <p>Gracias por tu generosidad &#128512; </p> 
+   <p></p>
+
+<!-- Cancion cumple feliz -->
+<audio controls autoplay>
+    <source src="Qué Los Cumplas Feliz -  La Konga ft. Camilo y Nardo-yt.savetube.me.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- Emojis volando -->
+  <script>
+    function iniciarMusica() {
+      document.getElementById("musica").style.display = "block";
+    }
+
+    const emojis = ['🎉', '🎈', '🥳', '🎁', '🎂'];
+    const numEmojis = 60;
+
+    for (let i = 0; i < numEmojis; i++) {
+      const emoji = document.createElement('div');
+      emoji.className = 'emoji';
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = `${Math.random() * 100}%`;
+      emoji.style.animationDuration = `${8 + Math.random() * 10}s`;
+      emoji.style.fontSize = `${1.5 + Math.random() * 2}rem`;
+      document.body.appendChild(emoji);
+    }
+  </script>
+</body>
+</html>
